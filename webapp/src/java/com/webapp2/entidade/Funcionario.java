@@ -1,11 +1,13 @@
 package com.webapp2.entidade;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Funcionario implements Serializable {
@@ -14,10 +16,23 @@ public class Funcionario implements Serializable {
     private Long id;
     private String nome;
     private String funcao;
+    
+    @ManyToMany(mappedBy = "funcionarios")
+    private List<Hotel> hoteis;
 
     public Funcionario() {
         super();
     }
+
+    public List<Hotel> getHoteis() {
+        return hoteis;
+    }
+
+    public void setHoteis(List<Hotel> hoteis) {
+        this.hoteis = hoteis;
+    }
+    
+    
 
     public Long getId() {
         return id;

@@ -2,23 +2,56 @@ package com.webapp2.entidade;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Quarto implements Serializable {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Temporal (TemporalType.DATE)
     private Date entrada;
+    
+    @Temporal (TemporalType.DATE)
     private Date saida;
 
+    @ManyToOne
+    private Hotel hotel;
+    
+    @ElementCollection
+    private List<Mobilia> mobilias;
+    
     public Quarto() {
         super();
     }
+
+    public Hotel getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
+    }
+
+    public List<Mobilia> getMobilias() {
+        return mobilias;
+    }
+
+    public void setMobilias(List<Mobilia> mobilias) {
+        this.mobilias = mobilias;
+    }
+    
+    
 
     public Long getId() {
         return id;

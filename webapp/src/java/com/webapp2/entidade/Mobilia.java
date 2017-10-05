@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Mobilia implements Serializable {
@@ -15,9 +16,23 @@ public class Mobilia implements Serializable {
     private String descricao;
     private Double valor;
 
+    @ManyToOne
+    private Quarto quarto;
+    
+    
     public Mobilia() {
         super();
     }
+
+    public Quarto getQuarto() {
+        return quarto;
+    }
+
+    public void setQuarto(Quarto quarto) {
+        this.quarto = quarto;
+    }
+    
+    
 
     public Long getId() {
         return id;
