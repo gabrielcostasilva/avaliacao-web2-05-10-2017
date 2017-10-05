@@ -31,8 +31,6 @@ public class Funcionario implements Serializable {
     public void setHoteis(List<Hotel> hoteis) {
         this.hoteis = hoteis;
     }
-    
-    
 
     public Long getId() {
         return id;

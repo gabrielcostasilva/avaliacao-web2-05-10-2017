@@ -31,8 +31,6 @@ public class Mobilia implements Serializable {
     public void setQuarto(Quarto quarto) {
         this.quarto = quarto;
     }
-    
-    
 
     public Long getId() {
         return id;

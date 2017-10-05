@@ -50,8 +50,6 @@ public class Quarto implements Serializable {
     public void setMobilias(List<Mobilia> mobilias) {
         this.mobilias = mobilias;
     }
-    
-    
 
     public Long getId() {
         return id;

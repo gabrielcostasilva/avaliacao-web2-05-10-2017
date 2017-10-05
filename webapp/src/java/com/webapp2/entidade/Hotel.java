@@ -31,8 +31,6 @@ public class Hotel implements Serializable {
     public void setFuncionarios(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
     }
-    
-    
 
     public Long getId() {
         return id;
