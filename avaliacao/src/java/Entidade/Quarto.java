@@ -34,6 +34,46 @@ public class Quarto implements Serializable {
         super();
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getEntrada() {
+        return entrada;
+    }
+
+    public void setEntrada(Date entrada) {
+        this.entrada = entrada;
+    }
+
+    public Date getSaida() {
+        return saida;
+    }
+
+    public void setSaida(Date saida) {
+        this.saida = saida;
+    }
+
+    public Hospede getHospede() {
+        return hospede;
+    }
+
+    public void setHospede(Hospede hospede) {
+        this.hospede = hospede;
+    }
+
+    public List<Mobilia> getMobilia() {
+        return mobilia;
+    }
+
+    public void setMobilia(List<Mobilia> mobilia) {
+        this.mobilia = mobilia;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;

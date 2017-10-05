@@ -1,6 +1,7 @@
+
 package Modelo;
 
-import Entidade.Funcionario;
+import Entidade.Hospede;
 import javax.annotation.Resource;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -10,30 +11,36 @@ import javax.transaction.UserTransaction;
 
 @ManagedBean
 @SessionScoped
-public class FuncionarioBean {
-
+public class HospedeBean {
+    
     private String nome;
-    private String funcao;
-
-    @PersistenceContext
-    private EntityManager em;
-
     @Resource
     private UserTransaction utx;
-
-    public void Criar() {
-        Funcionario funcionario = new Funcionario();
-
-        funcionario.setNome(this.nome);
-        funcionario.setFuncao(this.funcao);
-
+    @PersistenceContext
+    private EntityManager em;
+    
+    
+    public void criar(){
+        
+        Hospede hospede = new Hospede();
+        
+        hospede.setNome(this.nome);
+        
+        
         try {
+            
             utx.begin();
-            em.persist(funcionario);
+            em.persist(hospede);
             utx.commit();
+            
+     
+            
         } catch (Exception e) {
-            System.out.println("Erro ao cadastrar funcionário");
         }
+        
+        
+        
+        
     }
 
     public String getNome() {
@@ -44,12 +51,12 @@ public class FuncionarioBean {
         this.nome = nome;
     }
 
-    public String getFuncao() {
-        return funcao;
+    public UserTransaction getUtx() {
+        return utx;
     }
 
-    public void setFuncao(String funcao) {
-        this.funcao = funcao;
+    public void setUtx(UserTransaction utx) {
+        this.utx = utx;
     }
 
     public EntityManager getEm() {
@@ -59,14 +66,9 @@ public class FuncionarioBean {
     public void setEm(EntityManager em) {
         this.em = em;
     }
-
-    public UserTransaction getUtx() {
-        return utx;
-    }
-
-    public void setUtx(UserTransaction utx) {
-        this.utx = utx;
-    }
+    
+    
+    
     
     
 }
