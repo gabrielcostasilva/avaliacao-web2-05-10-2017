@@ -13,12 +13,14 @@ import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
+import javax.validation.constraints.Future;
 
 @ManagedBean
 @SessionScoped
 public class QuartoBean {
     
     private Date entrada;
+    @Future
     private Date saida;
     
     @Resource

@@ -22,6 +22,7 @@ public class MobiliaBean {
     
     private String descricao;
     @DecimalMin("0.00")
+    @DecimalMax ("1.000")
     private double valor;
     
     @Resource
