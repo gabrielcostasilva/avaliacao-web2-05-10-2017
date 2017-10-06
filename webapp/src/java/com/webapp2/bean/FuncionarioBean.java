@@ -1,18 +1,16 @@
 package com.webapp2.bean;
 
 import com.webapp2.entidade.Funcionario;
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
-import javax.validation.constraints.NotNull;
 
 @ManagedBean
 public class FuncionarioBean {
   
     private String nome;
-    @NotNull
     private String funcao;
         
     @PersistenceContext
@@ -41,17 +39,14 @@ public class FuncionarioBean {
 
         try {
             Funcionario f1 = new Funcionario();
-
             f1.setNome("Adilson");
             f1.setFuncao("Programador");
             
             Funcionario f2 = new Funcionario();
-
             f2.setNome("Jonas");
             f2.setFuncao("Comerciante");
             
             Funcionario f3 = new Funcionario();
-
             f3.setNome("Alan");
             f3.setFuncao("Carpinteiro");
 

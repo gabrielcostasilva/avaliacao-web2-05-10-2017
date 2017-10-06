@@ -8,13 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Hotel implements Serializable {
     
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min=3, max=15)
     private String nome;
     
     @ManyToMany

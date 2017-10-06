@@ -1,17 +1,15 @@
 package com.webapp2.bean;
 
 import com.webapp2.entidade.Hospede;
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
-import javax.validation.constraints.NotNull;
 
 @ManagedBean
 public class HospedeBean {
-  
-    @NotNull
+ 
     private String nome;
 
     @PersistenceContext
@@ -32,19 +30,14 @@ public class HospedeBean {
 
         try {
             Hospede h1 = new Hospede();
-
             h1.setNome("Adilson");
             
             Hospede h2 = new Hospede();
-
             h2.setNome("Jonas");
-            
-            
+                        
             Hospede h3 = new Hospede();
-
             h3.setNome("Alan");
             
-
             ut.begin();
 
             em.persist(h1);

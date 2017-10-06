@@ -7,17 +7,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Hospede implements Serializable {
-    
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
     private String nome;
-    
+
     @ManyToOne
     private Quarto quarto;
-    
 
     public Hospede() {
         super();
@@ -71,7 +72,5 @@ public class Hospede implements Serializable {
         }
         return true;
     }
-    
-    
-    
+
 }

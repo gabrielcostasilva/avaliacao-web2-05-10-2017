@@ -1,19 +1,16 @@
 package com.webapp2.bean;
 
 import com.webapp2.entidade.Mobilia;
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 @ManagedBean
 public class MobiliaBean {
   
     private String descricao;
-    @Min(0) @Max(1000)
     private Double valor;
         
     @PersistenceContext
@@ -43,18 +40,15 @@ public class MobiliaBean {
 
         try {
             Mobilia m1 = new Mobilia();
-
             m1.setDescricao("Mesa");
             m1.setValor(10.0);
             
             Mobilia m2 = new Mobilia();
-
-            m2.setDescricao("Mesa");
+            m2.setDescricao("Cadeira");
             m2.setValor(30.0);
             
             Mobilia m3 = new Mobilia();
-
-            m3.setDescricao("Mesa");
+            m3.setDescricao("Frigobar");
             m3.setValor(20.0);
             
 

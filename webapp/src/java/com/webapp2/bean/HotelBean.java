@@ -1,17 +1,15 @@
 package com.webapp2.bean;
 
 import com.webapp2.entidade.Hotel;
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
-import javax.validation.constraints.Size;
 
 @ManagedBean
 public class HotelBean {
   
-    @Size(min=3, max=15)
     private String nome;
         
     @PersistenceContext
@@ -32,18 +30,15 @@ public class HotelBean {
 
         try {
             Hotel h1 = new Hotel();
-
-            h1.setNome("Adilson");
+            h1.setNome("Lago");
             
             
             Hotel h2 = new Hotel();
-
-            h2.setNome("Jonas");
+            h2.setNome("Praia");
             
             
             Hotel h3 = new Hotel();
-
-            h3.setNome("Alan");
+            h3.setNome("Ilha");
             
 
             ut.begin();

@@ -7,19 +7,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Entity
 public class Mobilia implements Serializable {
-    
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;
+    @Min(0) @Max(1000)
     private Double valor;
 
     @ManyToOne
     private Quarto quarto;
-    
-    
+
     public Mobilia() {
         super();
     }
@@ -80,7 +83,5 @@ public class Mobilia implements Serializable {
         }
         return true;
     }
-    
-    
-    
+
 }
