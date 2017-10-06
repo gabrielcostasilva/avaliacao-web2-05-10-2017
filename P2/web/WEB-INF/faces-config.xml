@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>irHotel</from-outcome>
+            <to-view-id>/hotel.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>irFuncionario</from-outcome>
+            <to-view-id>/funcionario.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>irHospede</from-outcome>
+            <to-view-id>/hospede.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/funcionario.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>funcionarioCriado</from-outcome>
+            <to-view-id>/funcionario.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/hospede.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>hospedeCriado</from-outcome>
+            <to-view-id>/hospede.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/hotel.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>hotelCriado</from-outcome>
+            <to-view-id>/hotel.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

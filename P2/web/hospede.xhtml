@@ -10,12 +10,10 @@
         <h:form>
             
             <p:outputLabel for="entradaNome" value="Nome"></p:outputLabel>
-            <p:inputText id="entradaNome" value="#{funcionarioBean.nome}"></p:inputText>
+            <p:inputText id="entradaNome" value="#{hospedeBean.nome}"></p:inputText>
             
-            <p:outputLabel for="entradaFuncao" value="Funcao"></p:outputLabel>
-            <p:inputText id="entradaFuncao" value="#{funcionarioBean.funcao}"></p:inputText>
+            <p:commandButton ajax="false" value="Salvar" action="#{hospedeBean.salvar()}"></p:commandButton>
             
-            <p:commandButton ajax="false" value="Salvar" action="#{funcionarioBean.salvar()}"></p:commandButton>
         </h:form>
     </h:body>
 </html>

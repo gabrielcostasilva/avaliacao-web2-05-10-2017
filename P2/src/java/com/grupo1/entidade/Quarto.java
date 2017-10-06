@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Quarto implements Serializable{
@@ -14,6 +15,9 @@ public class Quarto implements Serializable{
     private Long id;
     private Date entrada;
     private Date saida;
+    
+    @ManyToOne
+    private Mobilia mobilia;
 
     public Quarto() {
         super();
