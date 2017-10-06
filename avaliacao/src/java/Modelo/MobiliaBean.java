@@ -12,6 +12,8 @@ import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 
 @ManagedBean
 @SessionScoped
@@ -19,6 +21,7 @@ public class MobiliaBean {
     
     
     private String descricao;
+    @DecimalMin("0.00")
     private double valor;
     
     @Resource

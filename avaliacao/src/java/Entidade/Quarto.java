@@ -16,8 +16,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class Quarto implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Temporal(TemporalType.DATE)
     private Date entrada;
@@ -25,7 +24,7 @@ public class Quarto implements Serializable {
     private Date saida;
     
     @OneToMany
-    private Hospede hospede;
+    private List<Hospede> hospede;
     
     @ElementCollection
     private List<Mobilia> mobilia;
@@ -58,13 +57,14 @@ public class Quarto implements Serializable {
         this.saida = saida;
     }
 
-    public Hospede getHospede() {
+    public List<Hospede> getHospede() {
         return hospede;
     }
 
-    public void setHospede(Hospede hospede) {
+    public void setHospede(List<Hospede> hospede) {
         this.hospede = hospede;
     }
+
 
     public List<Mobilia> getMobilia() {
         return mobilia;

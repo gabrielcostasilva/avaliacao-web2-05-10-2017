@@ -1,6 +1,7 @@
 package Entidade;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ public class Funcionario implements Serializable{
     private String funcao;
     
     @ManyToMany
-    private Hotel hotel;
+    private List<Hotel> hotel;
     
     public Funcionario(){
         super();
@@ -72,13 +73,15 @@ public class Funcionario implements Serializable{
         this.funcao = funcao;
     }
 
-    public Hotel getHotel() {
+    public List<Hotel> getHotel() {
         return hotel;
     }
 
-    public void setHotel(Hotel hotel) {
+    public void setHotel(List<Hotel> hotel) {
         this.hotel = hotel;
     }
+
+
     
     
 }

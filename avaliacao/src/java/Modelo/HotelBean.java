@@ -9,11 +9,13 @@ import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
+import javax.validation.constraints.Size;
 
 @ManagedBean
 @SessionScoped
 public class HotelBean {
     
+    @Size(min=3,max=15)
     private String nome;
     
     

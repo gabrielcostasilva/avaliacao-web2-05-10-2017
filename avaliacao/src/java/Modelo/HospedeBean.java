@@ -8,11 +8,13 @@ import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
+import javax.validation.constraints.NotNull;
 
 @ManagedBean
 @SessionScoped
 public class HospedeBean {
     
+    @NotNull
     private String nome;
     @Resource
     private UserTransaction utx;

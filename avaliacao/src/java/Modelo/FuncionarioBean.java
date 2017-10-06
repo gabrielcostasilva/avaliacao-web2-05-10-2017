@@ -7,12 +7,14 @@ import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
+import javax.validation.constraints.NotNull;
 
 @ManagedBean
 @SessionScoped
 public class FuncionarioBean {
-
+    
     private String nome;
+    @NotNull
     private String funcao;
 
     @PersistenceContext
@@ -21,7 +23,7 @@ public class FuncionarioBean {
     @Resource
     private UserTransaction utx;
 
-    public void Criar() {
+    public void criar() {
         Funcionario funcionario = new Funcionario();
 
         funcionario.setNome(this.nome);

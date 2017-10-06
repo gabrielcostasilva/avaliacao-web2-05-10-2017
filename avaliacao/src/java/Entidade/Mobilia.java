@@ -3,16 +3,11 @@ package Entidade;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Embeddable;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Embeddable
 public class Mobilia implements Serializable{
     
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String descricao;
     private double valor;
     
@@ -21,14 +16,6 @@ public class Mobilia implements Serializable{
     
     public Mobilia(){
         super();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getDescricao() {
@@ -57,8 +44,8 @@ public class Mobilia implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.id);
+        int hash = 5;
+        hash = 31 * hash + Objects.hashCode(this.quarto);
         return hash;
     }
 
@@ -74,11 +61,12 @@ public class Mobilia implements Serializable{
             return false;
         }
         final Mobilia other = (Mobilia) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.quarto, other.quarto)) {
             return false;
         }
         return true;
     }
+
     
     
     
