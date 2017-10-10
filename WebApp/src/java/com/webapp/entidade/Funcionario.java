@@ -1,11 +1,13 @@
 package com.webapp.entidade;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -17,7 +19,18 @@ public class Funcionario implements Serializable {
     
     @NotNull 
     private String funcao;
+    
+    @ManyToMany (mappedBy = "funcionarios")
+    List<Hotel> hoteis;
 
+    public List<Hotel> getHoteis() {
+        return hoteis;
+    }
+
+    public void setHoteis(List<Hotel> hoteis) {
+        this.hoteis = hoteis;
+    }
+    
     public Funcionario() {
         super();
     }

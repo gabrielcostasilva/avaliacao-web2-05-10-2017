@@ -2,11 +2,14 @@ package com.webapp.entidade;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
@@ -22,7 +25,21 @@ public class Quarto implements Serializable {
     
     @Temporal (TemporalType.DATE) @Future
     private Date saida;
+    
+    @OneToMany
+    private List<Hospede> hospedes;
+    
+    @ElementCollection
+    private List<Mobilia> mobilia;
 
+    public List<Hospede> getHospedes() {
+        return hospedes;
+    }
+
+    public void setHospedes(List<Hospede> hospedes) {
+        this.hospedes = hospedes;
+    }
+    
     public Quarto() {
         super();
     }
