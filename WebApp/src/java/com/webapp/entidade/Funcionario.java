@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Funcionario implements Serializable {
@@ -13,6 +14,8 @@ public class Funcionario implements Serializable {
     @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    
+    @NotNull 
     private String funcao;
 
     public Funcionario() {

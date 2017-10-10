@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
 
 @Entity
 public class Quarto implements Serializable {
@@ -19,7 +20,7 @@ public class Quarto implements Serializable {
     @Temporal (TemporalType.DATE)
     private Date entrada;
     
-    @Temporal (TemporalType.DATE)
+    @Temporal (TemporalType.DATE) @Future
     private Date saida;
 
     public Quarto() {

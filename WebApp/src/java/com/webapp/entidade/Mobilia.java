@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 
 @Entity
 public class Mobilia implements Serializable {
@@ -13,6 +15,8 @@ public class Mobilia implements Serializable {
     @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;
+    
+    @DecimalMin ("0.00") @DecimalMax ("1.000")
     private double valor;
 
     public Mobilia() {
