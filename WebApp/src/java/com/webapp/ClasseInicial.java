@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.faces.bean.ManagedBean;
@@ -111,6 +110,18 @@ public class ClasseInicial {
             Hotel h1 = new Hotel("Royal Palace", funcionarios, quartos);
             Hotel h2 = new Hotel("Imperial Hotel", funcionarios, quartos);
             Hotel h3 = new Hotel("Sleep in", funcionarios, quartos);
+            
+            utx.begin();
+            em.persist(h1);
+            utx.commit();
+            
+            utx.begin();
+            em.persist(h2);
+            utx.commit();
+            
+            utx.begin();
+            em.persist(h3);
+            utx.commit();
             
         } catch (Exception e) {
             System.out.println(e);
