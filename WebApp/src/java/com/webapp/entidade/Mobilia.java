@@ -24,6 +24,11 @@ public class Mobilia implements Serializable {
         super();
     }
 
+    public Mobilia(String descricao, double valor) {
+        this.setDescricao(descricao);
+        this.setValor(valor);
+    }
+
 //    public Long getId() {
 //        return id;
 //    }

@@ -16,6 +16,10 @@ public class Hospede implements Serializable {
     
     @NotNull
     private String nome;
+    
+    public Hospede(String nome) {
+        this.setNome(nome);
+    }
 
     public Hospede() {
         super();

@@ -22,6 +22,11 @@ public class Funcionario implements Serializable {
     
     @ManyToMany (mappedBy = "funcionarios")
     List<Hotel> hoteis;
+    
+    public Funcionario (String nome, String funcao) {
+        this.setNome(nome);
+        this.setFuncao(funcao);
+    }
 
     public List<Hotel> getHoteis() {
         return hoteis;

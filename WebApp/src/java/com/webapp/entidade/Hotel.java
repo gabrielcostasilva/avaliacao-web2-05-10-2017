@@ -26,6 +26,12 @@ public class Hotel implements Serializable {
     @OneToMany
     private List<Quarto> quartos;
 
+    public Hotel(String nome, List<Funcionario> funcionarios, List<Quarto> quartos) {
+        this.setNome(nome);
+        this.setFuncionarios(funcionarios);
+        this.setQuartos(quartos);
+    }
+
     public List<Quarto> getQuartos() {
         return quartos;
     }

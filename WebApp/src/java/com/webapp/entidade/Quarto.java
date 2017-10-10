@@ -32,6 +32,21 @@ public class Quarto implements Serializable {
     @ElementCollection
     private List<Mobilia> mobilia;
 
+    public Quarto(Date entrada, Date saida, List<Mobilia> mobilia, List<Hospede> hospedes) {
+        this.setEntrada(entrada);
+        this.setSaida(saida);
+        this.setMobilia(mobilia);
+        this.setHospedes(hospedes);
+    }
+
+    public List<Mobilia> getMobilia() {
+        return mobilia;
+    }
+
+    public void setMobilia(List<Mobilia> mobilia) {
+        this.mobilia = mobilia;
+    }
+
     public List<Hospede> getHospedes() {
         return hospedes;
     }
